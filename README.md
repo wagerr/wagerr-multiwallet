@@ -1,13 +1,13 @@
-coinbin
+ioncoinbin
 =======
 
-A Open Source Browser Based Bitcoin Wallet. Version 1.2 beta by OutCast3k
+A Open Source Browser Based Ionomy Wallet. 
 
-Live version available at http://coinb.in/ or http://4zpinp6gdkjfplhk.onion
+based on (Version 1.2 beta by OutCast3k, live version available at http://coinb.in/ or http://4zpinp6gdkjfplhk.onion)
 
-Github URL: https://github.com/OutCast3k/coinbin/
+Github URL: https://github.com/cevap/ion-browser-wallet/
 
-Coinb.in supports a number of key features such as: 
+Ion-browser-wallet supports a number of key features such as: 
 
 - Offline Compressed & uncompressed Address creation.
 - Offline Multisignature Address creation.
@@ -29,4 +29,6 @@ Coinb.in supports a number of key features such as:
 - Supports altcoins such as litecoin
 - Replace by fee (RBF) Support
 
-Donate to 1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg to see more development!
+Donate to cevap ION: iaogSr2W3Yo1HDKiEFYULQpX2HRuBnJPAq
+                BTC: 3DHhT6c2BN86Tx6D2w615UUSFvUwT41jY7
+Donate to OutCast3k BTC: 1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg to see more development!
