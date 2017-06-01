@@ -26,7 +26,7 @@ $(document).ready(function() {
 					var keys = coinjs.newKeys(s);
 
 					$("#walletAddress").html(keys.address);
-					$("#walletHistory").attr('href','https://ion.blockr.io/address/info/'+keys.address);
+					$("#walletHistory").attr('href','https://chainz.cryptoid.info/ion/address.dws?'+keys.address);
 
 					$("#walletQrCode").html("");
 					var qrcode = new QRCode("walletQrCode");
@@ -63,7 +63,7 @@ $(document).ready(function() {
 		$("#openWallet").addClass("hidden").show();
 
 		$("#walletAddress").html("");
-		$("#walletHistory").attr('href','https://ion.blockr.io/address/info/');
+		$("#walletHistory").attr('href','https://chainz.cryptoid.info/ion/address.dws?');
 
 		$("#walletQrCode").html("");
 		var qrcode = new QRCode("walletQrCode");
