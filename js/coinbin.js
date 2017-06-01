@@ -26,11 +26,11 @@ $(document).ready(function() {
 					var keys = coinjs.newKeys(s);
 
 					$("#walletAddress").html(keys.address);
-					$("#walletHistory").attr('href','https://btc.blockr.io/address/info/'+keys.address);
+					$("#walletHistory").attr('href','https://ion.blockr.io/address/info/'+keys.address);
 
 					$("#walletQrCode").html("");
 					var qrcode = new QRCode("walletQrCode");
-					qrcode.makeCode("bitcoin:"+keys.address);
+					qrcode.makeCode("ionomy:"+keys.address);
 
 					$("#walletKeys .privkey").val(keys.wif);
 					$("#walletKeys .pubkey").val(keys.pubkey);
@@ -63,11 +63,11 @@ $(document).ready(function() {
 		$("#openWallet").addClass("hidden").show();
 
 		$("#walletAddress").html("");
-		$("#walletHistory").attr('href','https://btc.blockr.io/address/info/');
+		$("#walletHistory").attr('href','https://ion.blockr.io/address/info/');
 
 		$("#walletQrCode").html("");
 		var qrcode = new QRCode("walletQrCode");
-		qrcode.makeCode("bitcoin:");
+		qrcode.makeCode("ionomy:");
 
 		$("#walletKeys .privkey").val("");
 		$("#walletKeys .pubkey").val("");
@@ -141,7 +141,7 @@ $(document).ready(function() {
 
 				}, signed);
 			} else {
-				$("#walletSendConfirmStatus").removeClass("hidden").addClass('alert-danger').html("You have a confirmed balance of "+dvalue+" BTC unable to send "+total+" BTC").fadeOut().fadeIn();
+				$("#walletSendConfirmStatus").removeClass("hidden").addClass('alert-danger').html("You have a confirmed balance of "+dvalue+" ION unable to send "+total+" ION").fadeOut().fadeIn();
 				thisbtn.attr('disabled',false);
 			}
 
@@ -231,9 +231,9 @@ $(document).ready(function() {
 		coinjs.addressBalance($("#walletAddress").html(),function(data){
 			if($(data).find("result").text()==1){
 				var v = $(data).find("balance").text()/100000000;
-				$("#walletBalance").html(v+" BTC").attr('rel',v).fadeOut().fadeIn();
+				$("#walletBalance").html(v+" ION").attr('rel',v).fadeOut().fadeIn();
 			} else {
-				$("#walletBalance").html("0.00 BTC").attr('rel',v).fadeOut().fadeIn();
+				$("#walletBalance").html("0.00 ION").attr('rel',v).fadeOut().fadeIn();
 			}
 
 			$("#walletLoader").addClass("hidden");
@@ -256,7 +256,7 @@ $(document).ready(function() {
 		}
 		var s = ($("#newBrainwallet").is(":checked")) ? $("#brainwallet").val() : null;
 		var coin = coinjs.newKeys(s);
-		$("#newBitcoinAddress").val(coin.address);
+		$("#newIonomyAddress").val(coin.address);
 		$("#newPubKey").val(coin.pubkey);
 		$("#newPrivKey").val(coin.wif);
 
@@ -668,7 +668,7 @@ $(document).ready(function() {
 
 			QCodeDecoder().decodeFromCamera(document.getElementById('videoReader'), function(er,data){
 				if(!er){
-					var match = data.match(/^bitcoin\:([13][a-z0-9]{26,33})/i);
+					var match = data.match(/^ionomy\:([13][a-z0-9]{26,33})/i);
 					var result = match ? match[1] : data;
 					$(""+$("#qrcode-scanner-callback-to").html()).val(result);
 					$("#qrScanClose").click();
@@ -706,8 +706,8 @@ $(document).ready(function() {
 		var host = $(this).attr('rel');
 
 
-		if(host=='blockr.io_bitcoinmainnet'){
-			listUnspentBlockrio_BitcoinMainnet(redeem);
+		if(host=='blockr.io_ionomymainnet'){
+			listUnspentBlockrio_IonomyMainnet(redeem);
 		} else if(host=='chain.so_litecoin'){
 			listUnspentChainso_Litecoin(redeem);
 		}  else if(host=='chain.so_dogecoin'){
@@ -819,7 +819,7 @@ $(document).ready(function() {
 		var tx = coinjs.transaction();
 		tx.listUnspent(redeem.addr, function(data){
 			if(redeem.addr) {
-				$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://btc.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
+				$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://ion.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 
 				$.each($(data).find("unspent").children(), function(i,o){
 					var tx = $(o).find("tx_hash").text();
@@ -839,17 +839,17 @@ $(document).ready(function() {
 	}
 
 	/* retrieve unspent data from blockrio for mainnet */
-	function listUnspentBlockrio_BitcoinMainnet(redeem){
+	function listUnspentBlockrio_IonomyMainnet(redeem){
 		$.ajax ({
 			type: "POST",
-			url: "https://btc.blockr.io/api/v1/address/unspent/"+redeem.addr+"?unconfirmed=1",
+			url: "https://ion.blockr.io/api/v1/address/unspent/"+redeem.addr+"?unconfirmed=1",
 			dataType: "json",
 			error: function(data) {
 				$("#redeemFromStatus").removeClass('hidden').html('<span class="glyphicon glyphicon-exclamation-sign"></span> Unexpected error, unable to retrieve unspent outputs!');
 			},
 			success: function(data) {
 				if((data.status && data.data) && data.status=='success'){
-					$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://btc.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
+					$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://ion.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 					for(var i in data.data.unspent){
 						var o = data.data.unspent[i];
 						var tx = o.tx;
@@ -880,7 +880,7 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 				if((data.status && data.data) && data.status=='success'){
-					$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://btc.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
+					$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://ion.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 					for(var i in data.data.txs){
 						var o = data.data.txs[i];
 						var tx = ((o.txid).match(/.{1,2}/g).reverse()).join("")+'';
@@ -914,7 +914,7 @@ $(document).ready(function() {
 			},
                         success: function(data) {
 				if($(data).find("result").text()==1){
-					$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://btc.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
+					$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://ion.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 					$.each($(data).find("unspent").children(), function(i,o){
 						var tx = $(o).find("tx_hash").text();
 						var n = $(o).find("tx_output_n").text();
@@ -963,7 +963,7 @@ $(document).ready(function() {
 			success: function(data) {
 				if((data.status && data.data) && data.status=='success'){
 					$("#redeemFromAddress").removeClass('hidden').html(
-						'<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://btc.blockr.io/address/info/'+
+						'<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="https://ion.blockr.io/address/info/'+
 						redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 					for(var i in data.data.txs){
 						var o = data.data.txs[i];
@@ -1051,7 +1051,7 @@ $(document).ready(function() {
 		$(thisbtn).val('Please wait, loading...').attr('disabled',true);
 		$.ajax ({
 			type: "POST",
-			url: coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=bitcoin&request=sendrawtransaction',
+			url: coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=ionomy&request=sendrawtransaction',
 			data: {'rawtx':$("#rawTransaction").val()},
 			dataType: "xml",
 			error: function(data) {
@@ -1101,11 +1101,11 @@ $(document).ready(function() {
 	}
 
 	// broadcast transaction via blockr.io (mainnet)
-	function rawSubmitBlockrio_BitcoinMainnet(thisbtn){ 
+	function rawSubmitBlockrio_IonomyMainnet(thisbtn){ 
 		$(thisbtn).val('Please wait, loading...').attr('disabled',true);
 		$.ajax ({
 			type: "POST",
-			url: "https://btc.blockr.io/api/v1/tx/push",
+			url: "https://ion.blockr.io/api/v1/tx/push",
 			data: {"hex":$("#rawTransaction").val()},
 			dataType: "json",
 			error: function(data) {
@@ -1131,11 +1131,11 @@ $(document).ready(function() {
 	}
 
 	// broadcast transaction via blockr.io (mainnet)
-	function rawSubmitChainso_BitcoinMainnet(thisbtn){ 
+	function rawSubmitChainso_IonomyMainnet(thisbtn){ 
 		$(thisbtn).val('Please wait, loading...').attr('disabled',true);
 		$.ajax ({
 			type: "POST",
-			url: "https://chain.so/api/v2/send_tx/BTC/",
+			url: "https://chain.so/api/v2/send_tx/ION/",
 			data: {"tx_hex":$("#rawTransaction").val()},
 			dataType: "json",
 			error: function(data) {
@@ -1160,11 +1160,11 @@ $(document).ready(function() {
 	}
 
 	// broadcast transaction via blockcypher.com (mainnet)
-	function rawSubmitblockcypher_BitcoinMainnet(thisbtn){ 
+	function rawSubmitblockcypher_IonomyMainnet(thisbtn){ 
 		$(thisbtn).val('Please wait, loading...').attr('disabled',true);
 		$.ajax ({
 			type: "POST",
-			url: "https://api.blockcypher.com/v1/btc/main/txs/push",
+			url: "https://api.blockcypher.com/v1/ion/main/txs/push",
 			data: JSON.stringify({"tx":$("#rawTransaction").val()}),
 			error: function(data) {
 				var obj = $.parseJSON(data.responseText);
@@ -1584,7 +1584,7 @@ $(document).ready(function() {
 			}
 		} else {
 			var qrcode = new QRCode("qrcode");
-			qrstr = "bitcoin:"+$('.address',thisbtn).val();
+			qrstr = "ionomy:"+$('.address',thisbtn).val();
 		}
 
 		if(qrstr){
@@ -1716,21 +1716,21 @@ $(document).ready(function() {
 			$("#rawSubmitBtn").click(function(){
 				rawSubmitBlockrio_litecoin(this)
 			});
-		} else if(host=="blockr.io_bitcoinmainnet"){
+		} else if(host=="blockr.io_ionomymainnet"){
 			$("#rawSubmitBtn").click(function(){
-				rawSubmitBlockrio_BitcoinMainnet(this);
+				rawSubmitBlockrio_IonomyMainnet(this);
 			});
-		} else if(host=="chain.so_bitcoinmainnet"){
+		} else if(host=="chain.so_ionomymainnet"){
 			$("#rawSubmitBtn").click(function(){
-				rawSubmitChainso_BitcoinMainnet(this);
+				rawSubmitChainso_IonomyMainnet(this);
 			});
 		} else if(host=="chain.so_dogecoin"){
 			$("#rawSubmitBtn").click(function(){
 				rawSubmitchainso_dogecoin(this);
 			});
-		} else if(host=="blockcypher_bitcoinmainnet"){
+		} else if(host=="blockcypher_ionomymainnet"){
 			$("#rawSubmitBtn").click(function(){
-				rawSubmitblockcypher_BitcoinMainnet(this);
+				rawSubmitblockcypher_IonomyMainnet(this);
 			});
 		} else if(host=="cryptoid.info_carboncoin"){
 			$("#rawSubmitBtn").click(function(){

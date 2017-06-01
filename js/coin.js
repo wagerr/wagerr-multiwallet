@@ -1,6 +1,6 @@
 /*
  Coinjs 0.01 beta by OutCast3k{at}gmail.com
- A bitcoin framework.
+ A Bitcoin framework.
 
  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs
 */
@@ -554,7 +554,7 @@ https://github.com/cevap/ion-browser-wallet
 		r.master = function(pass) {
 			var seed = (pass) ? Crypto.SHA256(pass) : coinjs.newPrivkey();
 			var hasher = new jsSHA(seed, 'HEX');
-			var I = hasher.getHMAC("Bitcoin seed", "TEXT", "SHA-512", "HEX");
+			var I = hasher.getHMAC("Ionomy seed", "TEXT", "SHA-512", "HEX");
 
 			var privkey = Crypto.util.hexToBytes(I.slice(0, 64));
 			var chain = Crypto.util.hexToBytes(I.slice(64, 128));
@@ -914,7 +914,7 @@ https://github.com/cevap/ion-browser-wallet
 		/* broadcast a transaction */
 		r.broadcast = function(callback, txhex){
 			var tx = txhex || this.serialize();
-			coinjs.ajax(coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=bitcoin&request=sendrawtransaction&rawtx='+tx+'&r='+Math.random(), callback, "GET");
+			coinjs.ajax(coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=ionomy&request=sendrawtransaction&rawtx='+tx+'&r='+Math.random(), callback, "GET");
 		}
 
 		/* generate the transaction hash to sign from a transaction input */
