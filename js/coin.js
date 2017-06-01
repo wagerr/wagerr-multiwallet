@@ -20,7 +20,7 @@ https://github.com/cevap/ion-browser-wallet
 	coinjs.pub = 0x67;
 	coinjs.priv = 0x99;
 	coinjs.multisig = 0x58;
-	coinjs.hdkey = {'prv':0x04358394, 'pub':0x043587cf};
+	coinjs.hdkey = {'prv':0x0488ade4, 'pub':0x0488b21e};
 
 	coinjs.compressed = false;
 
