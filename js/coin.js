@@ -4,6 +4,13 @@
 
  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs
 */
+/*
+2017 - CryptoEvaluationProgramm, powered by OpenDevs ssh-rsa 4096 38:cf:94:8d:80:cd:ea:da:a8:61:e5:9f:fd:cf:87:0c
+Ionomy's Coinjs - Ionomy Framework
+(based on coinb.in v0.01:  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs) 
+
+https://github.com/cevap/ion-browser-wallet
+*/
 
 (function () {
 
@@ -18,7 +25,7 @@
 	coinjs.compressed = false;
 
 	/* other vars */
-	coinjs.developer = '1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg'; // bitcoin
+	coinjs.developer = 'iaogSr2W3Yo1HDKiEFYULQpX2HRuBnJPAq'; // ionomy
 
 	/* bit(coinb.in) api vars */
 	coinjs.host = ('https:'==document.location.protocol?'https://':'http://')+'coinb.in/api/';
