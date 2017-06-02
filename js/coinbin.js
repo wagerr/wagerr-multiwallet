@@ -1,3 +1,20 @@
+/*
+ Coinjs 0.01 beta by OutCast3k{at}gmail.com
+ A Bitcoin framework.
+
+ http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs
+*/
+
+/* ========================================================================
+ * Ionomy's Coinjs by CEVAP - Ionomy Framework
+ * Version: 0.01
+ * (2017, CryptoEvaluationProgramm (CEVAP), powered by OpenDevs)
+ * pub  3072R/BA6683BA 2017-03-13 developer (dev@i2pmail.org) <dev@i2pmail.org> - https://pgp.mit.edu/pks/lookup?op=get&search=0x49464B32BA6683BA
+ * Licensed under MIT (https://github.com/cevap/ion-browser-wallet/blob/master/LICENSE)
+ * (based on coinb.in v0.01:  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs) 
+ * ========================================================================
+*/
+
 $(document).ready(function() {
 
 	/* open wallet code */

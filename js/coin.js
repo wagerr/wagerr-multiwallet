@@ -4,12 +4,14 @@
 
  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs
 */
-/*
-2017 - CryptoEvaluationProgramm, powered by OpenDevs ssh-rsa 4096 38:cf:94:8d:80:cd:ea:da:a8:61:e5:9f:fd:cf:87:0c
-Ionomy's Coinjs - Ionomy Framework
-(based on coinb.in v0.01:  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs) 
-
-https://github.com/cevap/ion-browser-wallet
+/* ========================================================================
+ * Ionomy's Coinjs by CEVAP - Ionomy Framework
+ * Version: 0.01
+ * (2017, CryptoEvaluationProgramm (CEVAP), powered by OpenDevs)
+ * pub  3072R/BA6683BA 2017-03-13 developer (dev@i2pmail.org) <dev@i2pmail.org> - https://pgp.mit.edu/pks/lookup?op=get&search=0x49464B32BA6683BA
+ * Licensed under MIT (https://github.com/cevap/ion-browser-wallet/blob/master/LICENSE)
+ * (based on coinb.in v0.01:  http://github.com/OutCast3k/coinjs or http://coinb.in/coinjs) 
+ * ========================================================================
 */
 
 (function () {
