@@ -29,7 +29,7 @@ Ion-browser-wallet supports a number of key features such as:
 - Supports altcoins such as ionomy, litecoin, dodgecoin and all other
 - Replace by fee (RBF) Support
 
-Donate to cevap ION: iaogSr2W3Yo1HDKiEFYULQpX2HRuBnJPAq
+Donate to cevap ION: iiT87sp5zT4TiudtDnYwSGQLwfeWC3bnmm
                 ION: 3DHhT6c2BN86Tx6D2w615UUSFvUwT41jY7
 Donate to OutCast3k ION: 1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg to see more development!
 
