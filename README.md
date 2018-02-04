@@ -1,11 +1,11 @@
-coinbin
+Wagerr offline wallet (multi wallet)
 =======
 
-A Open Source Browser Based Bitcoin Wallet. Version 1.3 beta by OutCast3k
+A Open Source Browser Based Wagerr Wallet. Version 1.3 beta by OutCast3k
 
-Live version available at http://coinb.in/ or http://4zpinp6gdkjfplhk.onion
+Live version available at http://wagerrlite.wagerr.com/.
 
-Github URL: https://github.com/OutCast3k/coinbin/
+Github URL: https://github.com/wagerr/wagerr-multiwallet/
 
 Coinb.in supports a number of key features such as: 
 
@@ -22,13 +22,13 @@ Coinb.in supports a number of key features such as:
 - Add custom data to transactions with the use of OP_RETURN.
 - Support current Dark Wallet Stealth Address structure (as of version Alpha 7) for outputs.
 - Brain wallet support.
-- Compatible with bitcoin-qt
+- Compatible with wagerr-qt
 - An offical .onion address for tor users.
 - Offline qrcode creator and scanning tool
 - HD (bip32) support
 - Supports altcoins such as litecoin
 - Replace by fee (RBF) Support
 - Segwit Support
-- Fee calculator - https://coinb.in/#fees
+- Fee calculator - https://wagerrlite.wagerr.com/#fees
 
 Donate to WmpGsSMzTS2KknyfuH8vzMyeRy8s2YRZSJ to see more development!
