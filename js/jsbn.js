@@ -1191,7 +1191,7 @@ BigInteger.ONE = nbv(1);
 BigInteger.valueOf = nbv;
 
 
-/// ionomyjs addons
+/// bitcoinjs addons
 
 /**
  * Turns a byte array into a big integer.

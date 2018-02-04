@@ -1,13 +1,13 @@
-﻿ion-browser-wallet
+coinbin
 =======
 
-A Open Source Browser Based Ionomy Wallet. 
+A Open Source Browser Based Bitcoin Wallet. Version 1.3 beta by OutCast3k
 
-based on: Version 1.2 beta by OutCast3k, live version available at http://coinb.in/ or http://4zpinp6gdkjfplhk.onion
+Live version available at http://coinb.in/ or http://4zpinp6gdkjfplhk.onion
 
-Github URL: https://github.com/cevap/ion-browser-wallet/
+Github URL: https://github.com/OutCast3k/coinbin/
 
-Ion-browser-wallet supports a number of key features such as: 
+Coinb.in supports a number of key features such as: 
 
 - Offline Compressed & uncompressed Address creation.
 - Offline Multisignature Address creation.
@@ -22,25 +22,13 @@ Ion-browser-wallet supports a number of key features such as:
 - Add custom data to transactions with the use of OP_RETURN.
 - Support current Dark Wallet Stealth Address structure (as of version Alpha 7) for outputs.
 - Brain wallet support.
-- Compatible with ion-qt
+- Compatible with bitcoin-qt
 - An offical .onion address for tor users.
 - Offline qrcode creator and scanning tool
 - HD (bip32) support
-- Supports altcoins such as ionomy, litecoin, dodgecoin and all other
+- Supports altcoins such as litecoin
 - Replace by fee (RBF) Support
+- Segwit Support
+- Fee calculator - https://coinb.in/#fees
 
-Donate to cevap ION: iiT87sp5zT4TiudtDnYwSGQLwfeWC3bnmm
-                ION: 3DHhT6c2BN86Tx6D2w615UUSFvUwT41jY7
-Donate to OutCast3k ION: 1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg to see more development!
-
-Demo: http://ionb.freeiz.com/ (no API for ionomy is setup currently)
-
-Contact
-=======
-Clearnet: dev@i2pmail.org
-I2P:      dev@mail.i2p
-
-Public Key
-=======
-pub  3072R/BA6683BA 2017-03-13 developer (dev@i2pmail.org) <dev@i2pmail.org>
-
+Donate to WmpGsSMzTS2KknyfuH8vzMyeRy8s2YRZSJ to see more development!
